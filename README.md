@@ -1,5 +1,3 @@
-#### English Version:
-
 # Industrial Modeling Toolkit
 
 ## Introduction
