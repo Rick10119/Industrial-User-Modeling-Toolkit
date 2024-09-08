@@ -1,4 +1,4 @@
-# Industrial Modeling Toolkit
+# Industrial User Modeling Toolkit
 
 ## Introduction
 This repository contains an open-source codebase for commonly used industrial production process modeling methods. It includes self-written implementations of State-Task Networks (STN) and Resource-Task Networks (RTN) in MATLAB. Each folder contains specific code and documentation.
