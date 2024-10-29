@@ -15,7 +15,7 @@ S_hn = sdpvar(NOFFACTORIES, NOFMACHINES, NOFINTERVALS + 1, 'full');
 Constraints_primal = [];
 
 % Energy consumption decomposition constraint (2)
-temp = reshape(sum(T_hnp .* repmat(permute(F_e_np, [1, 3, 2]), 1, 1, 1, NOFINTERVALS), NOFPOINTS, NOFMACHINES, NOFINTERVALS);
+temp = reshape(sum(T_hnp .* repmat(permute(F_e_np, [1, 3, 2]), 1, 1, 1, NOFINTERVALS)), NOFPOINTS, NOFMACHINES, NOFINTERVALS);
 temp = reshape(sum(temp), NOFMACHINES, NOFINTERVALS);
 Constraints_primal = [Constraints_primal, E_hn == temp];
 
@@ -32,7 +32,7 @@ Constraints_primal = [Constraints_primal, temp == ones(NOFFACTORIES, NOFMACHINES
 Constraints_primal = [Constraints_primal, S_hn(:, :, 1) == F_S_0];
 % Subsequent time intervals
 temp = permute(T_hnp, [2, 1, 3, 4]);
-temp = reshape(sum(temp .* repmat(permute(F_g_np, [3, 1, 2]), 1, 1, 1, NOFINTERVALS), NOFFACTORIES, NOFMACHINES, NOFINTERVALS);
+temp = reshape(sum(temp .* repmat(permute(F_g_np, [3, 1, 2]), 1, 1, 1, NOFINTERVALS)), NOFFACTORIES, NOFMACHINES, NOFINTERVALS);
 % Material change Factory*Machine*Time interval
 % Non-terminal intervals
 Constraints_primal = [Constraints_primal, S_hn(:, 1:end-1, 2:end) - S_hn(:, 1:end-1, 1:end-1) - ...
